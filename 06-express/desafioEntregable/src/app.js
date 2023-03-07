@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 
 app.get('/products', async (req, res) => {
   const products = await productManager.getProducts()
-  if (req.query) {
+  if (req.query.limit) {
     res.json({ path: '/products', products: products.slice(0, req.query.limit) })
   } else {
     res.json({ path: '/products', products })
