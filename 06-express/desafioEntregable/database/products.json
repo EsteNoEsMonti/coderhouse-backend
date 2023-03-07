@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Test Product 1 😀",
+    "description": "This is a generic description",
+    "price": 200,
+    "thumbnail": "not found",
+    "code": "AAA-111",
+    "stock": 25,
+    "id": 0
+  },
+  {
+    "title": "Test Product 2 😴",
+    "description": "This is a generic description",
+    "price": 3000,
+    "thumbnail": "not found",
+    "code": "AAA-222",
+    "stock": 40,
+    "id": 1
+  },
+  {
+    "title": "Test Product 3 😅",
+    "description": "This is a generic description",
+    "price": 2100,
+    "thumbnail": "not found",
+    "code": "AAA-333",
+    "stock": 7,
+    "id": 2
+  },
+  {
+    "title": "Test Product 4 😉",
+    "description": "This is a generic description",
+    "price": 400,
+    "thumbnail": "not found",
+    "code": "AAA-444",
+    "stock": 12,
+    "id": 3
+  },
+  {
+    "title": "Test Product 5 😋",
+    "description": "This is a generic description",
+    "price": 900,
+    "thumbnail": "not found",
+    "code": "AAA-555",
+    "stock": 30,
+    "id": 4
+  },
+  {
+    "title": "Test Product 6 😍",
+    "description": "This is a generic description",
+    "price": 2000,
+    "thumbnail": "not found",
+    "code": "AAA-666",
+    "stock": 45,
+    "id": 5
+  },
+  {
+    "title": "Test Product 7 😚",
+    "description": "This is a generic description",
+    "price": 2500,
+    "thumbnail": "not found",
+    "code": "AAA-777",
+    "stock": 66,
+    "id": 6
+  },
+  {
+    "title": "Test Product 8 🤩",
+    "description": "This is a generic description",
+    "price": 500,
+    "thumbnail": "not found",
+    "code": "AAA-888",
+    "stock": 96,
+    "id": 7
+  },
+  {
+    "title": "Test Product 9 😥",
+    "description": "This is a generic description",
+    "price": 200,
+    "thumbnail": "not found",
+    "code": "AAA-999",
+    "stock": 100,
+    "id": 8
+  },
+  {
+    "title": "Test Product 10 😎",
+    "description": "This is a generic description",
+    "price": 1300,
+    "thumbnail": "not found",
+    "code": "BBB-111",
+    "stock": 13,
+    "id": 9
+  }
+]
