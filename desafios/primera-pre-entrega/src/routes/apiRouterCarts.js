@@ -6,7 +6,6 @@ import { Cart } from '../class/Cart.js'
 export const apiRouterCarts = Router()
 
 apiRouterCarts.use(express.json())
-// apiRouterCarts.use(express.urlencoded({ extended: true }))
 
 const cartManager = new FileManager('./database/carts.json')
 
@@ -18,7 +17,6 @@ apiRouterCarts.get('/carts/:cid', async (req, res, next) => {
         next(error)
     }
 })
-
 
 apiRouterCarts.post('/carts', async (req, res, next) => {
     try {
@@ -33,23 +31,32 @@ apiRouterCarts.post('/carts', async (req, res, next) => {
 })
 
 apiRouterCarts.post('/carts/:cid/product/:pid', async (req, res, next) => {
-    const cart = await cartManager.buscarCosaSegunId(req.params.cid) // d2fd6466-54a6-4da4-b912-6baa10d95f7b
+    const cart = await cartManager.buscarCosaSegunId(req.params.cid)
     let index = cart.products.findIndex(e => e.product == req.params.pid)
-    console.log(cart)
-    console.log(index)
-    if (!index) {
-        console.log('if ', index);
-        cart.products[index].quantity++
-        const nuevoCart = await cartManager.reemplazarCosa(req.params.cid, cart)
-        res.json(nuevoCart)
-        
-    } else {
-        console.log('else ', index);
+    if (index === -1 || index == undefined) {
         cart.products.push({
             product: req.params.pid,
             quantity: 1
         })
         const nuevoCart = await cartManager.reemplazarCosa(req.params.cid, cart)
         res.json(nuevoCart)
+    } else {
+        cart.products[index].quantity++
+        const nuevoCart = await cartManager.reemplazarCosa(req.params.cid, cart)
+        res.json(nuevoCart)
     }
+    // if (!index) {
+    //     console.log('if ', index);
+    //     cart.products[index].quantity++
+    //     const nuevoCart = await cartManager.reemplazarCosa(req.params.cid, cart)
+    //     res.json(nuevoCart)
+    // } else {
+    //     console.log('else ', index);
+    //     cart.products.push({
+    //         product: req.params.pid,
+    //         quantity: 1
+    //     })
+    //     const nuevoCart = await cartManager.reemplazarCosa(req.params.cid, cart)
+    //     res.json(nuevoCart)
+    // }
 })

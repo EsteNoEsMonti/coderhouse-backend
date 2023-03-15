@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "d1fff947-809e-49df-94f6-836a665f32ff",
+		"name": "pre-entrega-1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10382151"
+	},
+	"item": [
+		{
+			"name": "/products",
+			"item": [
+				{
+					"name": "GET /products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /products?limit=",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products?limit=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /products/:pid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/6725f8f0-fc08-416e-ac54-de6f8b8de120",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"6725f8f0-fc08-416e-ac54-de6f8b8de120"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test Product 5 😮\",\r\n   \"description\": \"product to update\",\r\n   \"code\": \"BAD CODE ABC123\",\r\n   \"price\": 300,\r\n   \"stock\": 20,\r\n   \"category\": \"category 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /products",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test Product 4 😮\",\r\n   \"description\": \"product to update\",\r\n   \"code\": \"AAA444\",\r\n   \"price\": 300,\r\n   \"stock\": 20,\r\n   \"category\": \"category 2\",\r\n   \"status\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products/0d651e04-6f2b-4d85-a67d-66ac3b5b9259",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"0d651e04-6f2b-4d85-a67d-66ac3b5b9259"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/carts",
+			"item": [
+				{
+					"name": "POST /carts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/carts",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /carts/cid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/carts/3f59988d-40fe-4fed-a3e0-7ca1ffab8799",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carts",
+								"3f59988d-40fe-4fed-a3e0-7ca1ffab8799"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /carts/cid/product/pid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/carts/d2fd6466-54a6-4da4-b912-6baa10d95f7b/product/f18df687-c618-4c5b-8464-174715f8a6fe",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"carts",
+								"d2fd6466-54a6-4da4-b912-6baa10d95f7b",
+								"product",
+								"f18df687-c618-4c5b-8464-174715f8a6fe"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

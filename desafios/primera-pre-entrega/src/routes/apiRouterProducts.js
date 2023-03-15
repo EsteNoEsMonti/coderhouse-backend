@@ -65,11 +65,11 @@ apiRouterProducts.put('/products/:pid', async (req, res, next) => {
         next(error)
     }
 })
+
 apiRouterProducts.delete('/products/:pid', async (req, res, next) => {
     try {
         const borrado = await productManager.borrarCosaSegunId(req.params.pid)
         res.json(borrado)
-        // res.sendStatus(204)
     } catch (error) {
         next(error)
     }
