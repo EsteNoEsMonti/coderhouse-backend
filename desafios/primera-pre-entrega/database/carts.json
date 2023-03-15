@@ -5,6 +5,11 @@
   },
   {
     "id": "d2fd6466-54a6-4da4-b912-6baa10d95f7b",
-    "products": []
+    "products": [
+      {
+        "product": "f18df687-c618-4c5b-8464-174715f8a6fe",
+        "quantity": 2
+      }
+    ]
   }
 ]
