@@ -45,18 +45,4 @@ apiRouterCarts.post('/carts/:cid/product/:pid', async (req, res, next) => {
         const nuevoCart = await cartManager.reemplazarCosa(req.params.cid, cart)
         res.json(nuevoCart)
     }
-    // if (!index) {
-    //     console.log('if ', index);
-    //     cart.products[index].quantity++
-    //     const nuevoCart = await cartManager.reemplazarCosa(req.params.cid, cart)
-    //     res.json(nuevoCart)
-    // } else {
-    //     console.log('else ', index);
-    //     cart.products.push({
-    //         product: req.params.pid,
-    //         quantity: 1
-    //     })
-    //     const nuevoCart = await cartManager.reemplazarCosa(req.params.cid, cart)
-    //     res.json(nuevoCart)
-    // }
 })
