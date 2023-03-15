@@ -10,13 +10,23 @@
     "category": "category 1"
   },
   {
-    "id": "8eea29e1-7ebf-4663-806d-87659dc17f7c",
+    "id": "b326908d-961e-4a2f-bfce-de9f16cb8118",
     "title": "title 2",
     "description": "description 2",
-    "code": "BBB000",
+    "code": "AAA111",
     "price": 300,
-    "status": false,
+    "status": true,
     "stock": 20,
     "category": "category 2"
+  },
+  {
+    "id": "6725f8f0-fc08-416e-ac54-de6f8b8de120",
+    "title": "title 3",
+    "description": "description 3",
+    "code": "AAA222",
+    "price": 300,
+    "status": true,
+    "stock": 20,
+    "category": "category 3"
   }
 ]

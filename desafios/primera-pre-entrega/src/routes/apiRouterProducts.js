@@ -3,23 +3,28 @@ import { FileManager } from '../class/FileManager.js'
 import { randomUUID } from 'crypto'
 import { Product } from '../class/Product.js'
 
-export const apiRouterProduct = Router()
+export const apiRouterProducts = Router()
 
-apiRouterProduct.use(express.json())
-apiRouterProduct.use(express.urlencoded({ extended: true }))
+apiRouterProducts.use(express.json())
+apiRouterProducts.use(express.urlencoded({ extended: true }))
 
 const productManager = new FileManager('./database/products.json')
 
-apiRouterProduct.get('/products', async (req, res, next) => {
+apiRouterProducts.get('/products', async (req, res, next) => {
+
     try {
         const products = await productManager.buscarCosas()
-        res.json(products)
+        if (req.query.limit) {
+            res.json(products.slice(0, parseInt(req.query.limit)))
+        } else {
+            res.json(products)
+        }
     } catch (error) {
         next(error)
     }
 })
 
-apiRouterProduct.get('/products/:pid', async (req, res, next) => {
+apiRouterProducts.get('/products/:pid', async (req, res, next) => {
     try {
         const product = await productManager.buscarCosaSegunId(req.params.pid)
         res.json(product)
@@ -28,7 +33,7 @@ apiRouterProduct.get('/products/:pid', async (req, res, next) => {
     }
 })
 
-apiRouterProduct.post('/products', async (req, res, next) => {
+apiRouterProducts.post('/products', async (req, res, next) => {
     try {
         const product = new Product({
             id: randomUUID(),
@@ -41,7 +46,7 @@ apiRouterProduct.post('/products', async (req, res, next) => {
     }
 })
 
-apiRouterProduct.put('/products/:pid', async (req, res, next) => {
+apiRouterProducts.put('/products/:pid', async (req, res, next) => {
     let nuevoProducto
     try {
         nuevoProducto = new Product({
@@ -60,7 +65,7 @@ apiRouterProduct.put('/products/:pid', async (req, res, next) => {
         next(error)
     }
 })
-apiRouterProduct.delete('/product/:pid', async (req, res, next) => {
+apiRouterProducts.delete('/products/:pid', async (req, res, next) => {
     try {
         const borrado = await productManager.borrarCosaSegunId(req.params.pid)
         res.json(borrado)
