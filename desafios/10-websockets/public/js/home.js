@@ -20,6 +20,7 @@ const templateProducts = `
 <p>There aren't products 😔</p>
 {{/if}}
 `
+// @ts-ignore
 const createHtmlProducts = Handlebars.compile(templateProducts)
 
 serverSocket.on('productList', products => {
