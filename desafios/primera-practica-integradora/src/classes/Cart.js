@@ -6,3 +6,11 @@ export class Cart {
       this.products = products
   }
 }
+
+export class CartProduct {
+  constructor({ id, quantity }
+  ) {
+    this.id = id
+    this.quantity = quantity ?? 1
+  }
+}

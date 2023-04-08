@@ -16,6 +16,7 @@ export class Product {
     if (!stock) throw new Error('Contructor Product error: An argument is missing')
     if (!category) throw new Error('Contructor Product error: An argument is missing')
 
+    this.#id = id
     this.#title = title
     this.#description = description
     this.#code = code
@@ -26,6 +27,7 @@ export class Product {
     this.#thumbnails = thumbnails
   }
 
+  get id() { return this.#id }
   get title() { return this.#title }
   get description() { return this.#description }
   get code() { return this.#code }
@@ -48,5 +50,4 @@ export class Product {
       thumbnails: this.#thumbnails
     }
   }
-
 }

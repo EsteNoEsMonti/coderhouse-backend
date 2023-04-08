@@ -1,6 +1,7 @@
 import mongoose from "mongoose"
 
 const schemaProducts = new mongoose.Schema({
+  id: { type: String, require: true },
   title: { type: String, require: true },
   description: { type: String, require: true },
   code: { type: String, require: true },
@@ -34,6 +35,17 @@ class ProductManagerManager {
   }
 
   // TODO: update
+//   async updateProduct(id, newProduct) {
+//     const products = await this.#productsDb.find().lean()
+//     const indexFinded = products.findIndex(c => c.id === id)
+//     if (indexFinded === -1) {
+//         throw new Error('id no encontrado')
+//     }
+//     // products[indexFinded] = newProduct
+//     let updatedProduct= await this.#productsDb.updateOne(newProduct)
+//     console.log(updatedProduct);
+//     return updatedProduct
+// }
   // TODO: delete
 }
 

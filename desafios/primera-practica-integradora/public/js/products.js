@@ -24,7 +24,7 @@ const templateRealTimeProducts = Handlebars.compile(`
 {{#if thereAreProducts }}
     {{#each products}}
     <ul>
-      <li><b>id:</b> {{this.id}}</li>
+      <li><b>id:</b> {{this._id}}</li>
       <li><b>title:</b> {{this.title}}</li>
       <li><b>description:</b> {{this.description}}</li>
       <li><b>code:</b> {{this.code}}</li>

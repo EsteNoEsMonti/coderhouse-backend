@@ -1,0 +1,15 @@
+{{#if product}}
+<h1>Product code: {{this.code}}</h1>
+<ul>
+    <li><b>id:</b> {{product._id}}</li>
+    <li><b>title:</b> {{product.title}}</li>
+    <li><b>description:</b> {{product.description}}</li>
+    <li><b>code:</b> {{product.code}}</li>
+    <li><b>price:</b> {{product.price}}</li>
+    <li><b>status:</b> {{product.status}}</li>
+    <li><b>stock:</b> {{product.stock}}</li>
+    <li><b>category:</b> {{product.category}}</li>
+</ul>
+{{else}}
+<p>producto no encontrado</p>
+{{/if}}

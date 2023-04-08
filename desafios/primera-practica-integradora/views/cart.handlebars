@@ -1,0 +1,9 @@
+{{#if cart}}
+<h1>cart code: {{this._id}}</h1>
+<ul>
+    <li><b>id:</b> {{cart._id}}</li>
+    <li><b>products:</b> {{cart.products}}</li>
+</ul>
+{{else}}
+<p>Cart don't finded</p>
+{{/if}}
